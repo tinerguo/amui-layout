@@ -1,6 +1,6 @@
 {
   "name": "amui-layout",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "奥特美克layout布局组件库",
   "main": "dist/amuiLayout.v1.0.min.js",
   "directories": {
@@ -54,8 +54,6 @@
     "cross-env": "^5.1.3",
     "css-loader": "^0.28.10",
     "element-ui": "^2.9.1",
-    "eslint": "^3.19.0",
-    "eslint-plugin-vue": "^2.1.0",
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^1.1.11",
     "flex.css": "^1.1.7",
@@ -98,7 +96,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cfgtt/amui-layout.git"
+    "url": "git@github.com:tinerguo/amui-layout.git"
   },
   "keywords": [
     "后台布局组件",
