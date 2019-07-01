@@ -1,0 +1,54 @@
+<template>
+  <el-submenu :index="getID() || uniqueId">
+    <template slot="title">
+      <i style="font-size: 22px;width: 22px;" v-if="menu.icon" :class="`${menu.icon}`"></i>
+      <d2-icon-svg v-else-if="menu.iconSvg" :name="menu.iconSvg"/>
+      <i v-else class="fa fa-folder-o"></i>
+      <span slot="title">{{menu.title}}</span>
+    </template>
+    <template v-for="(child, childIndex) in menu.children">
+      <d2-layout-header-aside-menu-item v-if="child.children.length == 0"  :menu="child" :key="childIndex"/>
+      <d2-layout-header-aside-menu-sub v-else :menu="child" :key="childIndex"/>
+    </template>
+  </el-submenu>
+</template>
+
+<script>
+  import { uniqueId } from 'lodash'
+  // 组件
+  import d2LayoutMainMenuItem from './menu-item'
+  
+  export default {
+    name: 'd2-layout-header-aside-menu-sub',
+    components: {
+      'd2-layout-header-aside-menu-item': d2LayoutMainMenuItem
+    },
+    props: {
+      menu: {
+        type: Object,
+        required: false,
+        default: () => {}
+      }
+    },
+    watch:{
+      menu:function(data){
+        console.log(data);
+      }
+    },
+    data () {
+      return {
+        uniqueId: uniqueId('d2-menu-empty-')
+      }
+    },
+    methods:{
+      getID(){
+        return JSON.stringify({
+          name:this.menu.name,
+          url:this.menu.url,
+          id:this.menu.id,
+          closable:this.menu.closable
+        });
+      }
+    }
+  }
+</script>

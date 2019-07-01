@@ -1,0 +1,28 @@
+{
+  "result": [
+
+    {
+      "mid": "1",
+      "modulename": "顶部菜单1",
+      "pmid": null
+    },
+    {
+      "mid": "2",
+      "modulename": "顶部菜单2",
+      "pmid": null
+    },
+    {
+      "mid": "3",
+      "modulename": "顶部菜单3",
+      "pmid": null
+    },
+    {
+      "mid": "4",
+      "modulename": "顶部菜单4",
+      "pmid": null,
+      "url":"http://www.baidu.com",
+      "target":true
+    }
+
+  ]
+}

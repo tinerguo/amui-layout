@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<style>
+  *{
+    padding:0;
+    margin:0;
+  }
+  html,body{
+    height: 100%;
+  }
+</style>
+<body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+
+
+
+<div id="pageScroll"  style="height:100%;overflow: hidden;box-sizing: border-box;">
+    <div id="app">
+      <div v-for="item in arr" style="height:300px;line-height: 300px;text-align: center;border-bottom: 1px solid #f5f5f5;">{{item}}ddddddddddddd</div>
+    </div>
+</div>
+
+<script src="/static/Mashup.js"></script>
+<script>
+
+
+
+  var app = new Vue({
+    el: '#app',
+    data:function(){
+      return {
+        show:false,
+        arr:[1,2,3,4,5,6,7,8,9,10]
+      }
+    },
+    methods:{
+      
+    },
+    mounted:function(){
+      
+      console.log("ok");
+      
+    }
+  })
+</script>
+</body>
+</html>

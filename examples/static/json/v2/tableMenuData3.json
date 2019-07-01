@@ -1,0 +1,54 @@
+{
+  "result": [
+    {
+      "mid": "3-1",
+      "modulename": "地表水3",
+      "pmid": "3",
+      "url": "http://localhost:9000/pages/surfacewater.html",
+      "icon": ""
+    },
+    {
+      "mid": "3-1-1",
+      "modulename": "测试1",
+      "pmid": "1-1",
+      "url": "http://localhost:9000/pages/surfacewater.html",
+      "icon": ""
+    },
+    {
+      "mid": "3-1-2",
+      "modulename": "测试2",
+      "pmid": "3-1",
+      "url": "http://localhost:9000/pages/surfacewater.html",
+      "icon": ""
+    },
+    {
+      "mid": "3-1-3",
+      "modulename": "测试3",
+      "pmid": "3-1",
+      "url": "http://localhost:9000/pages/surfacewater.html",
+      "icon": ""
+    },
+    {
+      "mid": "3-2",
+      "modulename": "地表水取水口3",
+      "pmid": "3",
+      "url": " http://localhost:9000/pages/surfacewaterintake.html",
+      "icon": ""
+    },
+    {
+      "mid": "3-2-1",
+      "modulename": "地表水取水口3",
+      "pmid": "3-2",
+      "url": " http://localhost:9000/pages/surfacewaterintake.html",
+      "icon": ""
+    },
+    {
+      "mid": "3-3",
+      "modulename": "自来水厂3",
+      "pmid": "3",
+      "url": "http://localhost:9000/pages/waterworks.html",
+      "icon": ""
+    }
+
+  ]
+}

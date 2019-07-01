@@ -1,0 +1,308 @@
+
+
+
+
+ body, html {
+   height: 100%;
+   width: 100%;
+ }
+
+[v-cloak] {
+  display: none !important;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+.am-layout {
+  height: 100%;
+}
+
+.am-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  z-index: 9999;
+  box-sizing: border-box;
+}
+
+.am-sider {
+  position: absolute;
+  left: 0;
+  box-sizing: border-box;
+  z-index: 9999;
+}
+
+.am-header-content {
+  position: relative;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.am-header-content .logo {
+  height: 42px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.am-header-content .logo-title-text {
+  font-size: 18px;
+  vertical-align: middle;
+  color: #fff;
+}
+
+.top-menu {
+  float: right;
+  display: inline-block;
+  position: absolute;
+  right: 190px;
+  box-sizing: border-box;
+}
+
+.top-menu ul, .top-menu li {
+  list-style: none;
+}
+
+.top-menu li {
+  float: left;
+  color: #fff;
+  margin-right: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.8s;
+  color: #fff;
+  padding: 0 10px;
+  padding-left: 4px;
+}
+
+.top-menu li:hover {
+  color: #fff;
+}
+
+.top-menu li.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.header-menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  line-height: 18px;
+  border-radius: 12px;
+  padding: 4px 12px;
+  background: #033186;
+}
+
+.header-menu img {
+  vertical-align: middle;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.header-menu img:last-child {
+  margin-right: 0px;
+}
+
+.am-header {
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  box-sizing: border-box;
+}
+
+.am-content {
+  position: absolute;
+  box-sizing: border-box;
+  right: 0;
+  overflow: hidden;
+}
+
+.side-nav {
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+.side-nav li, .side-nav ul {
+  list-style: none;
+  position: relative;
+}
+
+.side-nav .nav > li, .side-nav .nav > li > a {
+  position: relative;
+  display: block;
+}
+
+.side-nav ul > li.expand > a > .sideNav-arrow {
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  /* IE 9 */
+  -moz-transform: rotate(0deg);
+  /* Firefox */
+  -webkit-transform: rotate(0deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(0deg);
+  /* Opera */
+}
+
+.side-nav ul > li {
+  cursor: pointer;
+}
+
+.side-nav ul > li > a {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  line-height: 20px;
+  letter-spacing: .3px;
+  transition: background;
+  transition-duration: .4s;
+  color: #fff;
+}
+
+.side-nav ul > li > a .menu-icon-02 {
+  color: #f7b55e;
+}
+
+.side-nav ul > li > a > .sideNav-arrow {
+  margin-right: 5px;
+  font-size: 14px;
+  transition: all;
+  transition-duration: .4s;
+  margin-top: 0;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -6px;
+  display: none;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -moz-transform: rotate(90deg);
+  /* Firefox */
+  -webkit-transform: rotate(90deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(90deg);
+  /* Opera */
+}
+
+.side-nav ul > li.hasChild > a > .sideNav-arrow {
+  display: block;
+}
+
+.side-nav .sub li {
+  /*padding-left:20px;*/
+}
+
+.side-nav li > ul.sub {
+  display: none;
+}
+
+.side-nav li.hasChild.expand > ul.sub {
+  display: block;
+}
+
+.side-nav .sub.level-1 > li {
+  padding-left: 0;
+  position: relative;
+}
+
+.side-nav ul.level-1 > li {
+  width: 159px;
+  height: 60px;
+  line-height: 60px;
+  color: #fff;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 0 0 0 20px;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.side-nav ul.level-1 > li > a > .sideNav-arrow {
+  display: none;
+}
+
+.side-nav ul.level-1 > li.expand,
+.side-nav ul.level-1 > li.active {
+  box-shadow: -2px 2px 2px #565656;
+  background: #fff;
+}
+
+.side-nav ul.level-1 > li.expand > a,
+.side-nav ul.level-1 > li.active > a {
+  color: #ff892f;
+}
+
+.side-nav ul.level-1 > li.expand > a > .sideNav-arrow,
+.side-nav ul.level-1 > li.active > a > .sideNav-arrow {
+  display: none;
+}
+
+.side-nav ul.level-2 {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  right: -201px;
+  background: #fff;
+  overflow: hidden;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+  box-shadow: 4px 2px 4px #ccc;
+
+}
+
+.side-nav ul.level-2 li {
+  border-bottom: 1px solid #f5f5f5;
+  padding-left: 20px;
+}
+
+.side-nav ul.level-2 a {
+  font-size: 14px;
+}
+
+.side-nav ul.level-2 li > a {
+  height: 40px;
+  line-height: 40px;
+  color: #333;
+}
+
+.span1 {
+  width: 100px;
+  display: block;
+  float: left;
+  line-height: 32px;
+}
+
+.span1 > span {
+  color: red;
+
+}
+
+.top, .bottom {
+  text-align: center;
+}
+.layout-editor {
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  bottom: 0px;
+  top: 0px;
+  min-width: 1100px;
+}
+
+.layout-editor-wrap {
+  height: 100%;
+  width: 100%;
+  background: url("../../static/images/img/pagebk.jpg") 0 0 no-repeat;
+  background-size: 100% 100%;
+}

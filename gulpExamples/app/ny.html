@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> 东丽区防汛监测预警平台 </title>
+  <!-- Mobile specific metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no">
+  
+  <!-- Force IE9 to render in normal mode -->
+  <!--[if IE]>
+  <meta http-equiv="x-ua-compatible" content="IE=9"/><![endif]-->
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="application-name" content="">
+  
+  <!-- import Vue.js -->
+  <script src="./plugins/vue.min.js"></script>
+  <!-- import stylesheet -->
+  <link rel="stylesheet" href="./plugins/iview.css">
+  <link rel="stylesheet" href="./plugins/am-layoutV2/amuiLayout.css">
+  <link rel="stylesheet" href="./plugins/am-layoutV2/static/styles/theme/ny/index.css">
+  <!-- import iView -->
+  <script src="./plugins/iview.min.js"></script>
+  <script src="./plugins/am-layoutV2/amuiLayout.v1.0.min.js"></script>
+  <script src="./plugins/axios.min.js"></script>
+  <script src="./plugins/pace/pace.js"></script>
+  <script src="./static/api.js"></script>
+  <script src="./static/layoutSetting.js"></script>
+  
+</head>
+<body>
+<div id="app">
+  <layout-d2admin :setting="setting"  ref="layout">
+    <!-- todo:添加头部设置(必选) -->
+    <template slot="header">
+      <header-menu @click="headerMenuClick"  :name.sync="setting.menu.currentHeader" :menu-data="setting.menu.header"></header-menu>
+      <d2-header-fullscreen></d2-header-fullscreen>
+      <d2-header-theme :themes="themes"></d2-header-theme>
+    </template>
+    <!-- todo:左侧菜单(必选) -->
+    <template slot="menusider">
+      <am-menuV3  :menu-data="setting.menu.aside">
+      </am-menuV3>
+    </template>
+    <!-- todo:添加tab组件(可选) -->
+    <template slot="tab">
+      <d2-tabs></d2-tabs>
+    </template>
+  </layout-d2admin>
+</div>
+
+<script>
+  var app = new Vue({
+    el: '#app',
+    data () {
+      return {
+        setting:window.setting,
+        themes:window.theme.list
+      }
+    },
+    methods:{
+      headerMenuClick(item){
+      }
+    }
+  });
+</script>
+</body>
+</html>
