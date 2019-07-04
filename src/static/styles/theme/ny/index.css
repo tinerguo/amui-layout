@@ -2,6 +2,14 @@
   user-select: none;
   cursor: pointer; }
 
+.iconfont {
+  display: inline-block;
+  font: normal normal normal 14px/1 iconfont;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
 .theme-ny .el-card.d2-card {
   border: 1px solid #8C40E2; }
   .theme-ny .el-card.d2-card .el-card__header {
@@ -15,6 +23,15 @@
   width: 14px;
   text-align: center;
   margin-right: 5px; }
+.theme-ny .el-submenu__title i.icon, .theme-ny .el-menu-item i.icon {
+  font-size: 16px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  padding: 7px;
+  color: #fff; }
 .theme-ny .el-submenu__title svg, .theme-ny .el-menu-item svg {
   margin: 0px;
   height: 14px;
