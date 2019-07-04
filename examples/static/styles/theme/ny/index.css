@@ -15,6 +15,15 @@
   width: 14px;
   text-align: center;
   margin-right: 5px; }
+.theme-ny .el-submenu__title i.icon, .theme-ny .el-menu-item i.icon {
+  font-size: 16px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  padding: 7px;
+  color: #fff; }
 .theme-ny .el-submenu__title svg, .theme-ny .el-menu-item svg {
   margin: 0px;
   height: 14px;

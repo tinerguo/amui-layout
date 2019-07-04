@@ -10,8 +10,8 @@
     "dist": "layout生产目录"
   },
   "scripts": {
-    "dev": "webpack-dev-server --content-base test/ --inline --hot --compress --history-api-fallback --port 8081 --config build/webpack.dev.config.js",
-    "dev:s": "webpack-dev-server --content-base test/ --inline --hot --compress --history-api-fallback --port 8081 --host 0.0.0.0 --config build/webpack.dev.config.js",
+    "dev": "webpack-dev-server --content-base test/ --inline --hot --compress --history-api-fallback --port 8080 --config build/webpack.dev.config.js",
+    "dev:s": "webpack-dev-server --content-base test/ --inline --hot --compress --history-api-fallback --port 8080 --host 0.0.0.0 --config build/webpack.dev.config.js",
     "lib": "webpack --config build/webpack.lib.config.js"
   },
   "dependencies": {

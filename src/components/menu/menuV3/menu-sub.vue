@@ -1,9 +1,9 @@
 <template>
   <el-submenu :index="getID() || uniqueId">
     <template slot="title">
-      <i style="font-size: 22px;width: 22px;" v-if="menu.icon" :class="`${menu.icon}`"></i>
-      <d2-icon-svg v-else-if="menu.iconSvg" :name="menu.iconSvg"/>
-      <i v-else class="fa fa-folder-o"></i>
+          <i :style="getColor" class="icon" v-if="menu.icon" :class="`${menu.icon}`"></i>
+          <d2-icon-svg :style="getColor" class="icon" v-else-if="menu.iconSvg" :name="menu.iconSvg"/>
+      <!-- <i v-else class="fa fa-folder-o"></i> -->
       <span slot="title">{{menu.title}}</span>
     </template>
     <template v-for="(child, childIndex) in menu.children">
@@ -17,7 +17,7 @@
   import { uniqueId } from 'lodash'
   // 组件
   import d2LayoutMainMenuItem from './menu-item'
-  
+
   export default {
     name: 'd2-layout-header-aside-menu-sub',
     components: {
@@ -34,6 +34,17 @@
       menu:function(data){
         console.log(data);
       }
+    },
+    computed:{
+        getColor:function(){
+            if(this.menu.bgcolor){
+                return {
+                    backgroundColor:this.menu.bgcolor,
+                    "color":"#fff"
+                }
+            }
+            return null;
+        }
     },
     data () {
       return {

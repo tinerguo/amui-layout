@@ -1,8 +1,8 @@
 <template>
 
-  
+
   <layout-d2admin :setting="setting"  ref="layout">
-  
+
     <!-- todo:添加头部设置(必选) -->
     <template slot="header">
       <header-menu @click="headerMenuClick"  :name.sync="setting.menu.currentHeader" :menu-data="setting.menu.header"></header-menu>
@@ -11,8 +11,8 @@
     </template>
     <!-- todo:左侧菜单(必选) -->
     <template slot="menusider">
-      <am-menuV3  :menu-data="setting.menu.aside">
-      </am-menuV3>
+      <am-menuv3  :menu-data="setting.menu.aside">
+      </am-menuv3>
     </template>
     <!-- todo:添加tab组件(可选) -->
     <template slot="tab">
@@ -39,13 +39,13 @@
     },
 		methods: {
       async loadHeadMenu(){
-  
-  
+
+
         var data1 = await getData["header-menu.json"]({
           method:'get'
         });
-  
-  
+
+
         var arr1 = toTreeData(Object.assign([],data1.result), {
           id: 'mid',
           parendId: 'pmid',
@@ -57,21 +57,21 @@
           checked: true
         });
         this.setting.menu.header = arr1;
-        
-        
-  
+
+
+
         //如果包含子菜单
         /*if(arr1.length > 0){
           this.loadSiderMenuData(arr1[0].id);
         }*/
-        
+
       },
       async loadSiderMenuData(id){
-        
+
         var data2 = await getData["tableMenuData"+id+".json"]({
           method:'get'
         });
-  
+
         var arr2 = toTreeData(Object.assign([],data2.result), {
           id: 'mid',
           parendId: 'pmid',
@@ -94,5 +94,5 @@
 </script>
 
 <style lang="scss" scoped>
-  
+
 </style>

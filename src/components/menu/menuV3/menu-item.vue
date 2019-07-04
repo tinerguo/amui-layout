@@ -1,8 +1,8 @@
 <template>
   <el-menu-item :index="getID() || uniqueId">
-    <i style="font-size: 22px;width: 22px;" v-if="menu.icon" :class="`${menu.icon}`"></i>
-    <d2-icon-svg v-else-if="menu.iconSvg" :name="menu.iconSvg"/>
-    <i v-else class="fa fa-file-o"></i>
+    <i  :style="getColor" class="icon" v-if="menu.icon" :class="`${menu.icon}`"></i>
+    <d2-icon-svg :style="getColor" class="icon" v-else-if="menu.iconSvg" :name="menu.iconSvg"/>
+    <!-- <i v-else class="fa fa-folder-o"></i> -->
     <span v-if="!isCollapsed" slot="title">{{menu.title || '未命名菜单'}}</span>
   </el-menu-item>
 </template>
@@ -24,6 +24,17 @@
         uniqueId: uniqueId('d2-menu-empty-'),
         isCollapsed: false
       }
+    },
+    computed:{
+        getColor:function(){
+            if(this.menu.bgcolor){
+                return {
+                    backgroundColor:this.menu.bgcolor,
+                    "color":"#fff"
+                }
+            }
+            return null;
+        }
     },
     methods:{
       getID(){

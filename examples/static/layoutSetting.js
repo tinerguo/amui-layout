@@ -7,7 +7,7 @@ var setting = {
     // 侧栏菜单
     aside: [],
     // [侧边栏宽度] 正常状态
-    asideWidth: '180px',
+    asideWidth: '280px',
     // [侧边栏宽度] 折叠状态
     asideWidthCollapse: '65px'
   },
@@ -23,12 +23,12 @@ var setting = {
 
 var theme = {
   list: [
-    {
+    /**{
       title: '奥特美克',
       name: 'am',
       preview: 'images/theme/am/preview@2x.png',
       backgroundImage:'images/theme/am/bg.jpg'
-    },
+  },**/
     {
       title: '农饮项目',
       name: 'ny',
