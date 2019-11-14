@@ -1,6 +1,6 @@
 {
   "name": "amui-layout",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "奥特美克layout布局组件库",
   "main": "dist/amuiLayout.v1.0.min.js",
   "directories": {
@@ -10,16 +10,20 @@
     "dist": "layout生产目录"
   },
   "scripts": {
-    "dev": "webpack-dev-server --content-base test/ --inline --hot --compress --history-api-fallback --port 8080 --config build/webpack.dev.config.js",
-    "dev:s": "webpack-dev-server --content-base test/ --inline --hot --compress --history-api-fallback --port 8080 --host 0.0.0.0 --config build/webpack.dev.config.js",
-    "lib": "webpack --config build/webpack.lib.config.js"
+    "dev": "webpack-dev-server --content-base test/ --inline --hot --compress --history-api-fallback --port 8083 --config build/webpack.dev.config.js",
+    "dev:s": "webpack-dev-server --content-base test/ --inline --hot --compress --history-api-fallback --port 8083 --host 0.0.0.0 --config build/webpack.dev.config.js",
+    "lib": "webpack --config build/webpack.lib.config.js",
+    "build": "node build/build.js"
   },
   "dependencies": {
     "async-validator": "^1.8.2",
+    "dayjs": "^1.8.16",
     "deepmerge": "^2.1.0",
     "element-resize-detector": "^1.1.14",
+    "element-ui": "^2.12.0",
     "js-calendar": "^1.2.3",
     "lodash.throttle": "^4.1.1",
+    "moment": "^2.24.0",
     "node-sass": "^4.12.0",
     "popper.js": "^1.14.1",
     "tinycolor2": "^1.4.1",
@@ -32,6 +36,7 @@
   "devDependencies": {
     "autoprefixer": "^9.6.0",
     "autoprefixer-loader": "^3.2.0",
+    "axios": "^0.19.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
@@ -53,7 +58,6 @@
     "copy-webpack-plugin": "^4.5.1",
     "cross-env": "^5.1.3",
     "css-loader": "^0.28.10",
-    "element-ui": "^2.9.1",
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^1.1.11",
     "flex.css": "^1.1.7",
@@ -92,11 +96,18 @@
     "vue-template-compiler": "^2.5.16",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1",
-    "webpack-merge": "^3.0.0"
+    "webpack-merge": "^3.0.0",
+    "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "ora": "^1.2.0",
+    "shelljs": "^0.7.6"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:tinerguo/amui-layout.git"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
   },
   "keywords": [
     "后台布局组件",

@@ -13,6 +13,16 @@
   // 背景图片和遮罩
   .d2-layout-header-aside-group {
     background-color: $theme-bg-color;
+    background:$theme-bg-color;
+    .d2-layout-header-aside-mask {
+      background: $theme-bg-mask;
+    }
+  }
+
+  // 背景图片和遮罩
+  .d2-layout-horizontal-aside-group {
+    background-color: $theme-bg-color;
+    background:$theme-bg-color;
     .d2-layout-header-aside-mask {
       background: $theme-bg-mask;
     }
@@ -27,28 +37,28 @@
     background: $theme-menu-item-background-color-hover;
   }
   %el-menu-icon {
-      i {
-        display: inline-block;
-        width: 14px;
-        text-align: center;
-        margin-right: 5px;
-      }
-      i.icon {
-        font-size: 16px;
-        width: 30px;
-        height: 30px;
-        background-color:transparent;
-        border-radius: 50%;
-        box-sizing: border-box;
-        padding: 7px;
-        color: #fff;
-      }
-      svg {
-        margin: 0px;
-        height: 14px;
-        width: 14px;
-        margin-right: 5px;
-      }
+    i {
+      display: inline-block;
+      width: 14px;
+      text-align: center;
+      margin-right: 5px;
+    }
+    i.icon {
+      font-size: 16px;
+      width: 30px;
+      height: 30px;
+      background-color:transparent;
+      border-radius: 50%;
+      box-sizing: border-box;
+      padding: 7px;
+      color: #fff;
+    }
+    svg {
+      margin: 0px;
+      height: 14px;
+      width: 14px;
+      margin-right: 5px;
+    }
   }
   .el-submenu__title {
     @extend %unable-select;
@@ -177,7 +187,14 @@
         }
       }
 
-
+      .user-menu{
+        .icon{
+          color: $theme-header-item-color;
+        }
+        .title{
+          color: $theme-header-item-color;
+        }
+      }
 
 
     }
@@ -188,9 +205,9 @@
   }
   // [布局] 顶栏下面
   .d2-theme-container {
-    background-color: $theme-aside-background-color;
     // 侧边栏
     .d2-theme-container-aside {
+      background-color: $theme-aside-background-color;
       // 菜单为空的时候显示的信息
       .d2-layout-header-aside-menu-empty {
         background: $theme-aside-menu-empty-background-color;
@@ -210,6 +227,67 @@
           }
         }
       }
+
+
+      .el-submenu {
+
+        &.is-opened > .el-menu{
+          background: $theme-aside-item-background-color-opend;
+        }
+
+        &.is-opened  {
+          .el-menu-item{
+            color: $theme-aside-item-color-opend;
+          }
+        }
+
+        &.is-active {
+
+          & > .el-submenu__title {
+            color: $theme-aside-item-color-active;
+            fill: $theme-aside-item-color-active;
+            background: $theme-aside-item-background-color-active;
+            i {
+              color: $theme-aside-item-color-active;
+            }
+            .el-submenu__icon-arrow {
+              color: $theme-aside-item-color-active;
+            }
+            &:hover {
+              color: $theme-aside-item-color-active;
+              background: $theme-aside-item-background-color-active;
+              i {
+                color: $theme-aside-item-color-active;
+              }
+              .el-submenu__icon-arrow {
+                color: $theme-aside-item-color-active;
+              }
+            }
+          }
+        }
+
+        .el-submenu__title {
+          color: $theme-aside-item-color;
+          background: $theme-aside-item-background-color;
+          i {
+            color: $theme-aside-item-color;
+          }
+          .el-submenu__icon-arrow {
+            color: $theme-aside-item-color;
+          }
+          &:hover {
+            color: $theme-aside-item-color-hover;
+            background: $theme-aside-item-background-color-hover;
+            i {
+              color: $theme-aside-item-color-hover;
+            }
+            .el-submenu__icon-arrow {
+              color: $theme-aside-item-color-hover;
+            }
+          }
+        }
+      }
+
       // [菜单] 正常状态
       .el-menu {
         .el-menu-item {
@@ -240,28 +318,6 @@
             background: $theme-aside-item-background-color-active;
             i {
               color: $theme-aside-item-color-active;
-            }
-          }
-        }
-      }
-      .el-submenu {
-        .el-submenu__title {
-          color: $theme-aside-item-color;
-          background: $theme-aside-item-background-color;
-          i {
-            color: $theme-aside-item-color;
-          }
-          .el-submenu__icon-arrow {
-            color: $theme-aside-item-color;
-          }
-          &:hover {
-            color: $theme-aside-item-color-hover;
-            background: $theme-aside-item-background-color-hover;
-            i {
-              color: $theme-aside-item-color-hover;
-            }
-            .el-submenu__icon-arrow {
-              color: $theme-aside-item-color-hover;
             }
           }
         }

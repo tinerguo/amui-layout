@@ -1,5 +1,5 @@
 <template>
-  <el-submenu :index="getID() || uniqueId">
+  <el-submenu :index="menu.id">
     <template slot="title">
           <i :style="getColor" class="icon" v-if="menu.icon" :class="`${menu.icon}`"></i>
           <d2-icon-svg :style="getColor" class="icon" v-else-if="menu.iconSvg" :name="menu.iconSvg"/>
@@ -7,8 +7,8 @@
       <span slot="title">{{menu.title}}</span>
     </template>
     <template v-for="(child, childIndex) in menu.children">
-      <d2-layout-header-aside-menu-item v-if="child.children.length == 0"  :menu="child" :key="childIndex"/>
-      <d2-layout-header-aside-menu-sub v-else :menu="child" :key="childIndex"/>
+      <d2-layout-header-aside-menu-item :istopmenu="false" v-if="child.children.length == 0"  :menu="child" :key="childIndex"/>
+      <d2-layout-header-aside-menu-sub :istopmenu="false" v-else :menu="child" :key="childIndex"/>
     </template>
   </el-submenu>
 </template>
@@ -28,11 +28,15 @@
         type: Object,
         required: false,
         default: () => {}
+      },
+      istopmenu:{
+        type:Boolean,
+        default:false
       }
     },
     watch:{
       menu:function(data){
-        console.log(data);
+//        console.log(data);
       }
     },
     computed:{

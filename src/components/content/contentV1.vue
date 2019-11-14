@@ -3,13 +3,14 @@
 
         <div id="page-content-wrapper" class="page-content-wrapper">
             <slot>
-                <iframe id="pageIframeContent" frameborder="none" style="position: absolute;top:0;right:0;left:0;bottom:0;" name="pageIframeContent" allowtransparency="true"
+                <iframe id="pageIframeContent" frameborder="none"
+                        style="position: absolute;top:0;right:0;left:0;bottom:0;"
+                        name="pageIframeContent"
+                        allowtransparency="true"
                         :src="t_url"
                         height="100%" width="100%"></iframe>
             </slot>
         </div>
-
-
 
     </div>
 </template>

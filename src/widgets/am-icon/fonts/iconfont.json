@@ -1,0 +1,240 @@
+{
+  "id": "1475303",
+  "name": "闸门监控系统",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "闸门监控系统",
+  "glyphs": [
+    {
+      "icon_id": "11452398",
+      "name": "配水调度",
+      "font_class": "peishuitiaodu",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "11458426",
+      "name": "形状 859 拷贝 6",
+      "font_class": "xingzhuangkaobei1",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "11458428",
+      "name": "形状926拷贝2",
+      "font_class": "xingzhuangkaobei2",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "11463565",
+      "name": "关于软件",
+      "font_class": "guanyuruanjian",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "11463566",
+      "name": "收缩",
+      "font_class": "shousuo",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "11463567",
+      "name": "关机",
+      "font_class": "guanji",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "11463568",
+      "name": "放大",
+      "font_class": "fangda",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "11599420",
+      "name": "水量监测",
+      "font_class": "shuiliangjiance",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "11615922",
+      "name": "机构管理",
+      "font_class": "jigouguanli",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "11615925",
+      "name": "授权管理",
+      "font_class": "shouquanguanli",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "11615926",
+      "name": "系统管理",
+      "font_class": "xitongguanli",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "11615927",
+      "name": "模块管理",
+      "font_class": "mokuaiguanli",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "11615928",
+      "name": "用户管理",
+      "font_class": "yonghuguanli",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "11615929",
+      "name": "实时监控",
+      "font_class": "shishijiankong",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "11615930",
+      "name": "运行维护 ",
+      "font_class": "yunhangweihu",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "11615931",
+      "name": "应用管理",
+      "font_class": "yingyongguanli",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "11615932",
+      "name": "闸门监测",
+      "font_class": "zhamenjiance",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "11615933",
+      "name": "闸门监测数据",
+      "font_class": "zhamenjianceshuju",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "11615934",
+      "name": "资源管理",
+      "font_class": "ziyuanguanli",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "11615935",
+      "name": "闸门控制",
+      "font_class": "zhamenkongzhi",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "11615936",
+      "name": "部件管理",
+      "font_class": "bujianguanli",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "11615937",
+      "name": "闸门管理",
+      "font_class": "zhamenguanli",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "11615938",
+      "name": "组织管理",
+      "font_class": "zuzhiguanli",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "11615940",
+      "name": "故障设备报告",
+      "font_class": "guzhangshebeibaogao",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "11615941",
+      "name": "闸门控制记录",
+      "font_class": "zhamenkongzhijilu",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "11615942",
+      "name": "部门管理",
+      "font_class": "bumenguanli",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "11622297",
+      "name": "查询统计",
+      "font_class": "chaxuntongji1",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "11622298",
+      "name": "设备通讯日志",
+      "font_class": "shebeitongxunrizhi1",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "11655820",
+      "name": "岗位管理",
+      "font_class": "gangweiguanli",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "11655821",
+      "name": "角色管理",
+      "font_class": "jiaoseguanli",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "11677794",
+      "name": "缩小",
+      "font_class": "suoxiao",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "11677927",
+      "name": "砖石",
+      "font_class": "zhuanshi",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "11679443",
+      "name": "用户",
+      "font_class": "yonghu",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    }
+  ]
+}

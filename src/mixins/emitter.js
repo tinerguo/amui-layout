@@ -42,6 +42,7 @@ export default {
             for(var i =0;i<this.$children.length;i++){
                 var child = this.$children[i];
                 const name = child.$options.name;
+                // console.log(name);
                 if(name == componentName){
                     tempObj.hashChild = true;
                     tempObj.child  = child;

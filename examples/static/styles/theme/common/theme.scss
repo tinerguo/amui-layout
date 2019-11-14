@@ -177,7 +177,14 @@
         }
       }
 
-
+      .user-menu{
+          .icon{
+              color: $theme-header-item-color;
+          }
+          .title{
+              color: $theme-header-item-color;
+          }
+      }
 
 
     }

@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import index from '../view/index'
 
-
 /******** todo:测试 *******/
 //模板页面
 import test from '../test/demo/test.vue'
@@ -20,9 +19,14 @@ import jcfx from '../view/jcfx.vue'
 
 /******** todo:测试 *******/
 //d2Admin 模板
-import d2Admin from '../view/d2Admin/d2Admin.vue'
-import d2AdminLayout from '../view/d2Admin/d2AdminLayout.vue'
-
+//农饮项目
+import ny from '../view/ny/ny.vue'
+//惠农项目
+import hn from '../view/hn/hn.vue'
+//闸门监控
+import zk from '../view/zk/zk.vue'
+//登录模板01
+import login01 from '../view/login01/page.vue'
 
 Vue.use(Router)
 
@@ -31,7 +35,7 @@ export default new Router({
     {
       path: '/',
       name: '/',
-      component: index
+      component: ny
     },
     {
       path: '/jcfx',
@@ -47,31 +51,28 @@ export default new Router({
       name:'flexDemo1',
       component: flexDemo1,
     },
-    /******布局样式DEMO1********/
+    /******农饮系统demo********/
     {
-      path:'/d2Admin',
-      name:'d2Admin',
-      component: d2Admin,
+      path:'/ny',
+      name:'ny',
+      component: ny,
     },
-    /******布局样式-有tab********/
-    /******布局样式-无tab********/
     /******布局样式router********/
     {
-      path:'/d2AdminLayout',
-      name:'d2AdminLayout',
-      component: d2AdminLayout,
-      children: [
-        {
-          path: 'test1',
-          name: 'test1',
-          component: test
-        },
-        {
-          path: 'test2',
-          name: 'test2',
-          component: test2
-        }
-      ]
+      path:'/hn',
+      name:'hn',
+      component: hn
+    },
+    /******闸空router********/
+    {
+      path:'/zk',
+      name:'zk',
+      component: zk
+    },
+    {
+      path:'/login01',
+      name:'login01',
+      component: login01
     },
     {
       path: '/pages',
@@ -92,5 +93,3 @@ export default new Router({
     }
   ]
 })
-
-

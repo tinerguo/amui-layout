@@ -1,16 +1,15 @@
 <template>
-  <div>
+  <div
+          style="font-size: 16px">
     <Tooltip
       effect="dark"
       content="主题"
       placement="bottom">
-      <Button
+      <Button style="font-size: inherit;"
         class="d2-ml-0 d2-mr btn-text can-hover"
         type="text"
         @click="dialogVisible = true">
-        <d2-icon
-          name="diamond"
-          style="font-size: 16px"/>
+        <am-icon :name="icon"/>
       </Button>
     </Tooltip>
   
@@ -29,10 +28,13 @@
 </template>
 
 <script>
- 
   import themeList from './theme-list/index.vue'
   export default {
     props:{
+      icon:{
+        type:String,
+        default:'iconzhuanshi'
+      },
       themes: {
         type: Array,
         default () {

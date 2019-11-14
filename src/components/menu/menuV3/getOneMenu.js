@@ -19,8 +19,41 @@ function getMenu(arr){
 }
 
 
+function findTreeItem(arr,id){
+
+  for(var i =0;i<arr.length;i++){
+
+    var item = arr[i];
+
+    if(item.id == id){
+
+      return item;
+
+    }else{
+
+      if(item.children && item.children.length > 0){
+
+        var result = findTreeItem(item.children,id);
+        if(result != null){
+          return result;
+        }
+
+      }
+
+    }
+
+
+  }
+  return null;
+
+}
+
+
+
+
 export {
-  getMenu
+  getMenu,
+  findTreeItem
 }
 
 

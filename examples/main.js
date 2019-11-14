@@ -3,18 +3,13 @@
  */
 import 'babel-polyfill';
 
-
-
 import Vue from 'vue';
 import App from './app.vue'
 import router from './routers/index'
 import iView from 'iView';
 import locale from 'iView/src/locale/lang/en-US';
 import 'iview/dist/styles/iview.css';
-
-
 import AMLayout from '../src/index';
-
 
 // require('./iconfont/style.css');
 Vue.use(iView, { locale });

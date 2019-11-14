@@ -1,0 +1,85 @@
+{
+    "result":[
+        {
+            "mid":"1",
+            "modulename":"灌区一张图",
+            "pmid":null,
+            "icon":"fa fa-folder-o"
+        },
+        {
+            "mid":"1-1",
+            "modulename":"灌区一张图1",
+            "pmid":"1",
+            "url":"http://www.json.cn"
+        },
+
+        {
+            "mid":"1-1-1",
+            "modulename":"灌区一张图1-1",
+            "pmid":"1-1",
+            "url":"http://www.json.cn"
+        },
+        {
+            "mid":"1-1-2",
+            "modulename":"灌区一张图1-2",
+            "pmid":"1-1",
+            "url":"http://www.json.cn"
+        },
+
+        {
+            "mid":"1-2",
+            "modulename":"灌区一张图2",
+            "pmid":"1",
+            "url":"http://www.baidu.com"
+        },
+        {
+            "mid":"2",
+            "modulename":"需水计划",
+            "pmid":null,
+            "icon":"fa fa-folder-o",
+            "url":"http://www.baidu.com"
+        },
+        {
+            "mid":"3",
+            "modulename":"配水计划",
+            "pmid":null,
+            "icon":"fa fa-folder-o"
+        },
+        {
+            "mid":"4",
+            "modulename":"配水计划1",
+            "pmid":null,
+            "icon":"fa fa-folder-o"
+        },
+        {
+            "mid":"5",
+            "modulename":"配水计划2",
+            "pmid":null,
+            "icon":"fa fa-folder-o"
+        },
+        {
+            "mid":"6",
+            "modulename":"配水计划3",
+            "pmid":null,
+            "icon":"fa fa-folder-o"
+        },
+        {
+            "mid":"7",
+            "modulename":"配水计划4",
+            "pmid":null,
+            "icon":"fa fa-folder-o"
+        },
+        {
+            "mid":"8",
+            "modulename":"配水计划3",
+            "pmid":null,
+            "icon":"fa fa-folder-o"
+        },
+        {
+            "mid":"9",
+            "modulename":"配水计划3",
+            "pmid":null,
+            "icon":"fa fa-folder-o"
+        }
+    ]
+}

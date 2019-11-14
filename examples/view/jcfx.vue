@@ -7,9 +7,9 @@
                 <am-headerv1 :height.sync="header.headerHeight" >
                     <am-header-contentv1 :title="header.title" :logo="header.logo">
                         <div slot="header-menu">
-                            <img src="/static/images/jcfx/top-icon01.png" alt="">
-                            <img src="/static/images/jcfx/top-icon02.png" alt="">
-                            <img src="/static/images/jcfx/top-icon03.png" alt="">
+                            <img :src="require('./jcfx/images/top-icon01.png')" alt="">
+                            <img :src="require('./jcfx/images/top-icon02.png')" alt="">
+                            <img :src="require('./jcfx/images/top-icon03.png')" alt="">
                         </div>
                     </am-header-contentv1>
                 </am-headerv1>
@@ -45,12 +45,6 @@
             </am-layoutv1>
         </div>
 
-
-        <div style="padding:14px;position: absolute;top:40px;right:40px;border:1px solid red;border-radius: 8px;background: #fff;z-index: 9999;">
-            <input style="padding: 2px 4px;" @click="demo01" type="button" value="测试1">
-            <input style="padding: 2px 4px;" @click="demo02" type="button" value="测试2">
-        </div>
-
     </div>
 </template>
 
@@ -58,18 +52,20 @@
     import BScroll from 'better-scroll';
     import Vue from 'vue';
     import axios from 'axios';
-    import {toTreeData} from '../utils/dom'
+    import {toTreeData} from '@/utils/dom'
     export default {
         name: 'jcfx',
         data () {
             return {
+                baseURL:window.configs.UI_ROOT,
                 content:{
-                    defaultURL:'/#/test'
+                    //设置默认地址
+                    defaultURL:'http://www.json.cn'
                 },
                 header: {
                     headerHeight: 60,
                     backgroundColor: 'rgba(2,57,145,1)',
-                    logo:'/static/images/jcfx/logo.png',
+                    logo:require('./jcfx/images/logo.png'),
                     title:'东丽区防汛监测预警平台'
                 },
                 sider: {
@@ -101,36 +97,9 @@
             },
             getMenuData(){
                 var that = this;
-
-            },
-            demo01(){
-                var that = this;
                            
-                axios.get('http://localhost:9001/v1/Users/ssotest/APPs/5/Modules')
+                axios.get(window.configs.UI_ROOT+'/static/json/jcfx/menuData.json')
                         .then(function (response) {
-                            
-                            var arr = toTreeData(Object.assign([], response.data.result), {
-                                id: 'mid',
-                                parendId: 'pmid',
-                                name: 'modulename',
-                                rootId: null,
-                                childrenParamName: 'children',
-                                expand: false,
-                                // selected:true,
-                                checked: true
-                            });
-                            console.log(JSON.stringify(arr));
-                            that.sider.menuData = arr;
-                        })
-                        .catch(function (error) {
-                            console.log(error);
-                        });
-            },
-            demo02(){
-                var that = this;
-                axios.get('/static/json/menuData2.json')
-                        .then(function (response) {
-
                             that.sider.menuData = response.data;
                         })
                         .catch(function (error) {
@@ -170,7 +139,7 @@
     .layout-editor-wrap{
         height:100%;
         width:100%;
-        background: url("/static/images/jcfx/pagebk.jpg") 0 0 no-repeat;
+        background: url("./jcfx/images/pagebk.jpg") 0 0 no-repeat;
         background-size: 100% 100%;
     }
 

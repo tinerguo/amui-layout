@@ -2,14 +2,6 @@
   user-select: none;
   cursor: pointer; }
 
-.iconfont {
-  display: inline-block;
-  font: normal normal normal 14px/1 iconfont;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
 .theme-ny .el-card.d2-card {
   border: 1px solid #8C40E2; }
   .theme-ny .el-card.d2-card .el-card__header {
@@ -129,6 +121,10 @@
       color: #FFF; }
     .theme-ny .d2-theme-header .d2-header-right .ivu-menu .ivu-menu-item.ivu-menu-item-active, .theme-ny .d2-theme-header .d2-header-right .ivu-menu .ivu-menu-item:hover {
       border-bottom: 2px solid #FFF; }
+  .theme-ny .d2-theme-header .d2-header-right .user-menu .icon {
+    color: #FFF; }
+  .theme-ny .d2-theme-header .d2-header-right .user-menu .title {
+    color: #FFF; }
   .theme-ny .d2-theme-header .logo-group {
     color: #FFF; }
 .theme-ny .d2-theme-container {

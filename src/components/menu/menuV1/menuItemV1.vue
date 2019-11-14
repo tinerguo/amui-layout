@@ -105,7 +105,7 @@
         methods:{
             //todo:菜单点击事件
             onSelectDefault:function(){
-                console.log("菜单点击事件");
+//                console.log("菜单点击事件");
                 var obj = {
                     ids:this.t_idLink,
                     level:this.t_level,
@@ -118,8 +118,8 @@
                     //todo:发送菜单点击事件
                     this.$amui.$emit('openContentPage',Object.assign({"url":this.t_nemuData.url},obj));
                     //todo:存储active id 链,用户菜单切换默认选中
-                    console.log("存储active id 链,用户菜单切换默认选中");
-                    console.log(obj);
+//                    console.log("存储active id 链,用户菜单切换默认选中");
+//                    console.log(obj);
                     this.$amui.setStore("topIndex",obj);
                 }else{
                     //todo:发送菜单点击事件
@@ -133,7 +133,7 @@
             },
             //todo:菜单点击事件
             onClickSelect:function(){
-                console.log("菜单点击事件");
+//                console.log("菜单点击事件");
                 var obj = {
                     ids:this.t_idLink,
                     level:this.t_level,
@@ -147,8 +147,8 @@
                     //todo:发送菜单点击事件
                     this.$amui.$emit('openContentPage',Object.assign({"url":this.t_nemuData.url},obj));
                     //todo:存储active id 链,用户菜单切换默认选中
-                    console.log("存储active id 链,用户菜单切换默认选中");
-                    console.log(obj);
+//                    console.log("存储active id 链,用户菜单切换默认选中");
+//                    console.log(obj);
                     this.$amui.setStore("topIndex",obj);
                 }else{
                     //todo:发送菜单点击事件

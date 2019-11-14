@@ -79,9 +79,11 @@ module.exports = {
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 loader: 'url-loader',
+                // publicPath:'./app/plugins/am-layoutV2/static/',
                 options: {
+                  publicPath: './',
                   limit: 100,
-                  name: utils.assetsPath('img/[name].[hash:7].[ext]')
+                  name: utils.assetsPath('images/[name].[hash:7].[ext]')
                 }
               },
             {

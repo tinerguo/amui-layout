@@ -351,7 +351,24 @@ export const off = (function() {
 };
  **/
 
-export function toTreeData(data, attr) {
+export function toTreeData(data, attr,isShowBack) {
+  var colorIndex = 0;
+  var colors = [
+    "#d35a5a",
+    "#536773",
+    "#5ea4ab",
+    "#dc876d",
+    "#8ec8b1",
+    "#75a188",
+    "#ffb538",
+    "#3a647d",
+    "#b4491f",
+    "#ffdc4f",
+    "#4796d6",
+    "#beff7b",
+    "#00c5fe",
+    "#5c577b"
+  ];
 
   attr = Object.assign({
     id: 'id',
@@ -370,14 +387,31 @@ export function toTreeData(data, attr) {
   let resData = data;
 
   for (let i = 0; i < resData.length; i++) {
+
     if (resData[i][attr.parendId] === attr.rootId || resData[i][attr.parendId] === null || resData[i][attr.parendId] === '') {
 
-      let obj = {
-        id: resData[i][attr.id],
-        title:resData[i][attr.name],
-        expand:attr['expand'],
-        name:resData[i][attr.name]
-      };
+      if(colorIndex > 13){
+        colorIndex = 0;
+      }
+      let obj = {};
+      if(isShowBack){
+         obj = {
+          id: resData[i][attr.id],
+          title:resData[i][attr.name],
+          expand:attr['expand'],
+          name:resData[i][attr.name],
+           bgcolor:colors[colorIndex]
+        };
+      }else{
+         obj = {
+          id: resData[i][attr.id],
+          title:resData[i][attr.name],
+          expand:attr['expand'],
+          name:resData[i][attr.name]
+        };
+      }
+
+      colorIndex++;
 
       obj[attr.childrenParamName] = [];
 
@@ -401,6 +435,8 @@ export function toTreeData(data, attr) {
 
         for (let j = 0; j < resData.length; j++) {
           if (treeArrs[i].id == resData[j][attr.parendId]) {
+
+
             let obj = {
               id: resData[j][attr.id],
               title:resData[j][attr.name],
@@ -465,6 +501,22 @@ export function fileDatakey(arr,keyArr){
   return r_arr;
 }
 
+
+export function GetQueryString(variable)
+{
+  var query = window.location.hash.substring(1);
+  if(query.split("?").length <= 1){
+    return(false);
+  }
+  var vars = query.split("?")[1].split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    if(pair[0] == variable){return pair[1];}
+  }
+  return(false);
+}
+
+
 //->把外界需要使用的方法暴露给utils
 export default {
   win: win,
@@ -492,5 +544,6 @@ export default {
   css: css,
   toTreeData:toTreeData,
   fileData:fileData,
-  fileDatakey:fileDatakey
+  fileDatakey:fileDatakey,
+  GetQueryString:GetQueryString
 }

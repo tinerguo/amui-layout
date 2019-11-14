@@ -1,5 +1,5 @@
 <template>
-  <el-menu-item :index="getID() || uniqueId">
+  <el-menu-item :index="menu.id">
     <i  :style="getColor" class="icon" v-if="menu.icon" :class="`${menu.icon}`"></i>
     <d2-icon-svg :style="getColor" class="icon" v-else-if="menu.iconSvg" :name="menu.iconSvg"/>
     <!-- <i v-else class="fa fa-folder-o"></i> -->
@@ -17,6 +17,10 @@
         type: Object,
         required: false,
         default: () => {}
+      },
+      istopmenu:{
+        type:Boolean,
+        default:false
       }
     },
     data () {
@@ -38,11 +42,11 @@
     },
     methods:{
       getID(){
+        return this.menu.id;
         return JSON.stringify({
           name:this.menu.name,
           url:this.menu.url,
-          id:this.menu.id,
-          closable:this.menu.closable
+          id:this.menu.id
         });
       }
     },

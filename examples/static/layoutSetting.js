@@ -7,33 +7,46 @@ var setting = {
     // 侧栏菜单
     aside: [],
     // [侧边栏宽度] 正常状态
-    asideWidth: '280px',
+    asideWidth: '220px',
     // [侧边栏宽度] 折叠状态
     asideWidthCollapse: '65px'
   },
   baseUrl:window.configs.IMG_ROOT,
+  APIUrl:window.configs.API_ROOT,
   //  非必须,可以为空或者不设置
-  title:'东丽区基层防汛监测预警平台ddddddddddddddddddddd',
+  title:'策勒县农村饮水安全系统',
   themeActiveSetting:{
     backgroundImage:'',
-    name:'ny'
-  }
+    name:'zk'
+  },
+  headerAsideCollapse:false,//头部是否可以伸缩
+  headerAsideHeight:60
 }
 
 
 var theme = {
   list: [
-    /**{
-      title: '奥特美克',
-      name: 'am',
-      preview: 'images/theme/am/preview@2x.png',
-      backgroundImage:'images/theme/am/bg.jpg'
-  },**/
     {
-      title: '农饮项目',
+      title: '农饮项目-经典',
       name: 'ny',
-      preview: 'images/theme/tomorrow-night-blue/preview@2x.png'
+      preview: 'images/theme/ny/preview@2x.png'
     },
+    {
+      title: '农饮项目-蓝色',
+      name: 'ny-V2',
+      preview: 'images/theme/ny-V2/preview@2x.png'
+    },
+    {
+      title: '闸控项目-经典',
+      name: 'zk',
+      preview: 'images/theme/zk/preview@2x.png'
+    },
+    {
+      title: '闸控项目-经典V2',
+      name: 'zk-V2',
+      preview: 'images/theme/zk/preview@2x.png'
+    },
+
     {
       title: 'd2admin 经典',
       name: 'd2',

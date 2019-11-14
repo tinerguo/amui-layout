@@ -44,7 +44,9 @@
 <script>
   import Vue from 'vue'
   import { Table,TableColumn } from 'element-ui';
-
+  import  store from 'store';
+  
+  
   Vue.component(Table.name, Table);
   Vue.component(TableColumn.name, TableColumn);
   
@@ -74,16 +76,20 @@
       handleSelectTheme (item) {
         this.$amui.$emit(eventConst.THEME_CHANGE_EVENT,item)
         this.activeName = item.name;
+        store.set('currentTheme', item.name);
       },
       getLayoutSetting(setting){
         this.baseUrl = setting.baseUrl;
-        this.activeName = setting.themeActiveSetting.name;
+        var currentTheme = store.get("currentTheme");
+        if(currentTheme){
+          this.activeName = currentTheme;
+        }else{
+          this.activeName = setting.themeActiveSetting.name;
+        }
       }
     },
     mounted(){
-  
       this.$amui.$on(eventConst.LAYOUT_INIT_EVENT,this.getLayoutSetting)
-      
     }
   }
 </script>

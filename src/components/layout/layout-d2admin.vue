@@ -13,36 +13,69 @@
       <div class="d2-layout-header-aside-content" flex="dir:top" >
 
         <!-- 顶栏 -->
-        <div
-          class="d2-theme-header"
+        <div class="d2-theme-header"
           :style="{
-          opacity: this.searchActive ? 0.5 : 1
+          opacity: this.searchActive ? 0.5 : 1,
+          height: !this.setting.headerAsideHeight ? '60px' : this.setting.headerAsideHeight+'px'
         }"
           flex-box="0"
           flex>
 
-          <div class="logo-group" :style="{width: asideCollapse ? this.menu.asideWidthCollapse : 'auto'}"
-               style="font-size: 16px;"
-               flex-box="0"  flex="main:center cross:center">
 
-            <!-- 如果标题存在 -->
-            <template v-if="title">
+          <template v-if="!setting.headerAsideCollapse">
 
-              <img :src="`${baseUrl}images/theme/${themeActiveSetting.name}/logo/icon-only.png`">
-              <span v-if="!asideCollapse">{{title}}</span>
-            </template>
+            <div class="logo-group" :style="{width:'auto'}"
+                 style="font-size: 18px;"
+                 flex-box="0"  flex="main:center cross:center">
+
+              <!-- 如果标题存在 -->
+              <template v-if="title">
+
+                <img :src="`${baseUrl}images/theme/${themeActiveSetting.name}/logo/icon-only.png`">
+                <span >{{title}}</span>
+              </template>
 
 
-            <!-- 如果标题不存在 -->
-            <template v-else>
-              <img v-if="asideCollapse" :src="`${baseUrl}images/theme/${themeActiveSetting.name}/logo/icon-only.png`">
-              <img v-else :src="`${baseUrl}images/theme/${themeActiveSetting.name}/logo/all.png`">
-            </template>
+              <!-- 如果标题不存在 -->
+              <template v-else>
+                <img  :src="`${baseUrl}images/theme/${themeActiveSetting.name}/logo/all.png`">
+              </template>
 
-          </div>
+            </div>
 
+
+          </template>
+
+          <template v-else>
+
+            <div class="logo-group" :style="{width: asideCollapse ? this.menu.asideWidthCollapse : 'auto'}"
+                 style="font-size: 16px;"
+                 flex-box="0"  flex="main:center cross:center">
+
+              <!--&lt;!&ndash; 如果标题存在 &ndash;&gt;-->
+              <template v-if="title">
+
+                <img :src="`${baseUrl}images/theme/${themeActiveSetting.name}/logo/icon-only.png`">
+                <span v-if="!asideCollapse">{{title}}</span>
+              </template>
+
+
+              <!--&lt;!&ndash; 如果标题不存在 &ndash;&gt;-->
+              <template v-else>
+                <img v-if="asideCollapse" :src="`${baseUrl}images/theme/${themeActiveSetting.name}/logo/icon-only.png`">
+                <img v-else :src="`${baseUrl}images/theme/${themeActiveSetting.name}/logo/all.png`">
+              </template>
+
+            </div>
+
+          </template>
+  
+          
+          
           <div class="toggle-aside-btn" @click="handleToggleAside"  flex-box="0">
-            <Icon type="md-menu" />
+            <slot name="toggle-aside-btn">
+              <Icon type="md-menu" />
+            </slot>
           </div>
 
           <div flex="cross:center" class="d2-theme-header-menu" flex-box="1">
@@ -63,11 +96,11 @@
         <div class="d2-theme-container" flex-box="1" flex>
 
           <!-- 主体 侧边栏 菜单 -->
-          <div
+          <div class="d2-theme-container-aside"
             v-show="!menu.asideClose"
             flex-box="0"
             ref="aside"
-            class="d2-theme-container-aside"
+            
             :style="{
             width: asideCollapse ? this.menu.asideWidthCollapse : this.menu.asideWidth,
             opacity: this.searchActive ? 0.5 : 1
@@ -92,8 +125,8 @@
             <transition name="fade-scale">
               <div v-show="!searchActive" class="d2-theme-container-main-layer" flex="dir:top">
                 <!-- tab -->
-                <div class="d2-theme-container-main-header" flex-box="0" style="margin-top:10px;">
-                  <slot name="tab">
+                <div class="d2-theme-container-main-header" flex-box="0">
+                  <slot name="tab" >
                   </slot>
                 </div>
                 <!-- 页面 -->
@@ -103,24 +136,23 @@
                           border-left: 1px solid #ccc;
                           border-right: 1px solid #ccc;
                           border-bottom: 1px solid #ccc;">
-                  <transition :name="transitionActive ? 'fade-transverse' : ''">
-                    <keep-alive :include="keepAlive">
                       <!--todo:内容插槽-->
-                      <!--<template slot="pageContent">
-			  <router-view/>
-		      </template>-->
                       <slot name="pageContent" >
-                        <vue-friendly-iframe @load="iframeLoad" id="layoutPageIframe"
-                                             :src="example1Form.src"></vue-friendly-iframe>
+                        <vue-friendly-iframe v-for="(item,index) in iframeList" :key="item.id"
+                                             v-show="item.id == iframectivate"
+                                             @load="iframeLoad(item.id)"
+                                             :id="'layoutPageIframe'+item.id"
+                                             :src="item.url"></vue-friendly-iframe>
                       </slot>
-                    </keep-alive>
-                  </transition>
                 </div>
               </div>
             </transition>
 
 
           </div>
+          
+          
+          
         </div>
       </div>
     </div>
@@ -134,14 +166,17 @@
   import VueFriendlyIframe from 'vue-friendly-iframe';
   // flex 布局库
 
-  import setting from './d2adminSetting'
+  import setting from './layout-d2admin/d2adminSetting'
   import d2Icon from '@/widgets/d2-icon/index.vue'
+  import amIcon from '@/widgets/am-icon/index.vue'
   import eventConst from '@/config/EventConst.js'
   import emitter from '@/mixins/emitter'
-  import {TAB} from '@/config/widgetNameConst.js'
-
+  import {TAB,BREADCRUMB,HEADERMENU} from '@/config/widgetNameConst.js'
+  import store from 'store';
+  
   Vue.component('d2-icon',d2Icon)
-
+  Vue.component('am-icon',amIcon)
+  
   export default {
     name: 'layout-d2admin',
     components: {
@@ -157,6 +192,14 @@
     mixins:[emitter],
     data () {
       return {
+        iframectivate:'empty',
+        iframeList:[
+          {
+            id:'empty',
+            url: 'about:blank',
+            searchTerm: 'tiger'
+          }
+        ],
         example1Form: {
           src: 'about:blank',
           searchTerm: 'tiger'
@@ -242,7 +285,9 @@
         },
         // todo:子组件是存在判断
         childrenWidget:{
-          hasTabD2admin:true
+          hasTabD2admin:true,
+          breadcrumb:true,
+          headermenu:{}
         }
       }
     },
@@ -270,14 +315,16 @@
         return this.search.active;
       },
       themeClassWrap(){
-        return [
-          `theme-${this.themeActiveSetting.name}`
-        ];
-      },
-
+        
+          return [
+            `theme-${this.themeActiveSetting.name}`
+          ];
+        
+      }
     },
     methods: {
       handleToggleAside () {
+        debugger;
         //发送
         this.asideCollapseToggle()
       },
@@ -285,11 +332,35 @@
         this.menu.asideCollapse = !this.menu.asideCollapse;
         this.$amui.$emit(eventConst.ASIDE_COLLAPSE_EVENT,this.menu.asideCollapse);
       },
+      pageClose(pages){
+        debugger;
+        pages.forEach((item) => {
+  
+          let index = this.iframeList.findIndex((tempObj) => {
+            return tempObj.id == item.id;
+          });
+          this.iframeList.splice(index, 1);
+          
+          var iframeItem=document.getElementById("layoutPageIframe"+item.id);
+          iframeItem.remove();
+        });
+      },
       pageChange(item){
         if(!item.url || item.url == ""){
-          this.example1Form.src = "about:blank";
+          item.url = "about:blank";
         }else{
-          this.example1Form.src = item.url;
+          item.url = item.url;
+        }
+        
+        let obj = this.iframeList.find((tempObj) => {
+          return tempObj.id == item.id;
+        });
+        
+        if(obj){
+          this.iframectivate = obj.id;
+        }else{
+          this.iframectivate = item.id;
+          this.iframeList.push(item);
         }
 
       },
@@ -298,13 +369,17 @@
         this.menu.asideClose = falg;
       },
       /** 加载页面 **/
-      iframeLoad(){
-        var iframe = document.querySelector("#layoutPageIframe iframe");
+      iframeLoad(id){
+        var iframe = document.querySelector("#layoutPageIframe"+id+" iframe");
         if(iframe){
           var dif = 60;
           if(this.childrenWidget.hasTabD2admin.hashChild){
             dif += 32;
           }
+          if(this.childrenWidget.breadcrumb.hashChild){
+            dif += 42;
+          }
+  
           iframe.height = document.body.clientHeight - dif;
         }
       },
@@ -324,15 +399,51 @@
       themeChange(themeSetting){
         this.themeActiveSetting.backgroundImage  = themeSetting.backgroundImage ? themeSetting.backgroundImage:"";
         this.themeActiveSetting.name  = themeSetting.name;
+      },
+      FullScreenChange(falg){
+        var that = this;
+        this.$nextTick(function () {
+          setTimeout(function(){
+            that.iframeLoad();
+          },400);
+        });
+
       }
     },
+    created(){
+        this.$amui.layoutSetting = this.setting;
+    },
     mounted(){
+  
+      if(store.get("currentTheme")){
+        this.themeActiveSetting.name = store.get("currentTheme");
+      }
+      
+      
       //todo:监听iframe设置的菜单
       this.$amui.$emit(eventConst.LAYOUT_INIT_EVENT,this.setting)
       this.$amui.$on(eventConst.PAGE_CHANGE_EVENT,this.pageChange);
+      this.$amui.$on(eventConst.PAGE_CLOSE_EVENT,this.pageClose);
       this.$amui.$on(eventConst.ASIDE_CLOSE_EVENT,this.siderClose);
       this.$amui.$on(eventConst.THEME_CHANGE_EVENT,this.themeChange);
+  
+      
+      
+      
       this.childrenWidget.hasTabD2admin = this.hasChild(TAB);
+      this.childrenWidget.breadcrumb = this.hasChild(BREADCRUMB);
+      this.childrenWidget.headermenu = this.hasChild(HEADERMENU);
+      
+      //避免左侧菜单闪烁,
+      if(this.childrenWidget.headermenu.hashChild){
+        this.menu.asideClose = true;
+      }
+  
+      
+      
+      this.$amui.$on(eventConst.FULL_SCREEN_EVENT,this.FullScreenChange);
+      
+      
     }
   }
 </script>

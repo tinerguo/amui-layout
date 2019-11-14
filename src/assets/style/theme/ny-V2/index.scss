@@ -1,0 +1,12 @@
+@import './setting.scss';
+@import '../theme.scss';
+
+
+.ivu-tabs.ivu-tabs-card>.ivu-tabs-bar .ivu-tabs-tab-active{
+  background: #12b6ac;
+  color:#fff;
+  border-radius: 0;
+  .ivu-tabs-close{
+    color:#fff;
+  }
+}

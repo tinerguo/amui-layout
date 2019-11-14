@@ -96,7 +96,6 @@
                 //todo:头部菜单修改的时候,默认选中一个菜单
                 /*DOM还没更新*/
                 this.$nextTick(function(){
-                    debugger;
                     if(this.$refs["menuItem"] && this.$refs["menuItem"].length > 0){
                         
                         this.$refs["menuItem"][0].onSelectDefault()

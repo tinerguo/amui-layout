@@ -31,7 +31,7 @@
 
 // 过渡动画 伸缩
 .fade-collapse-enter-active {
-  transition: opacity 1s;
+  transition: opacity .3s;
 }
 .fade-collapse-leave-active{
   transition: all 0s;
