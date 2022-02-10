@@ -24,7 +24,7 @@
     "js-calendar": "^1.2.3",
     "lodash.throttle": "^4.1.1",
     "moment": "^2.24.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "popper.js": "^1.14.1",
     "tinycolor2": "^1.4.1",
     "v-click-outside-x": "^2.4.0"
